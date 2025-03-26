@@ -8,7 +8,7 @@ function filtrarLivros() {
 
     //tirando a redundância das linhas acima
     const categoria = this.value; // `this` já é o botão clicado
-    let livrosFiltrados = livros.filter(livro => livro.categoria == categoria);
+    let livrosFiltrados = categoria == 'disponivel' ? livros.filter(livro => livro.quantidade > 0) : livros.filter(livro => livro.categoria == categoria);
     console.table(livrosFiltrados);
 
     exibirOsLivrosNaTela(livrosFiltrados);
